@@ -1,8 +1,8 @@
 
 function fetchDiscount(cardNumber) {
-  val response = context.http.send({
+  var response = context.http.send({
     method: "GET",
-    path: "card/" + cardNumber,
+    path: "card/" + cardNumber
   })
   return response.body.discount;
 }
@@ -29,12 +29,12 @@ $(function() {
   })
 
   function send(el) {
-    vat deferred = new Deferred();
-  	val cardNumber = el.val();
+    var deferred = new Deferred();
+  	var cardNumber = el.val();
     setTimeout(function() {
-      val discount = fetchDiscount()
+      var discount = fetchDiscount();
     	deferred.resolve(discount);
-    }, 0);
+    });
     return deferred.promise();
 	}
 
