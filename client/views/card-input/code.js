@@ -1,8 +1,9 @@
 function fetchDiscount(cardNumber) {
-    return context.http.send({
+    var response = context.http.send({
         method: 'GET',
         path: 'card/' + cardNumber
-    }).body.discount;
+    })
+    return response.body.discount;
 }
 
 $(function () {
