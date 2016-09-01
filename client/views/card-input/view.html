@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+  <head>
+    <script type="text/javascript">
+      var context = { // этот объект генерится из Java
+        data: { // данные которые были переданы при вызове метода navigation.push
+          receipt: function {
+            this.products = {
+              'ytrxv-dfdg4-kjh' : 1,
+              'poiml-79kjh-rys' : 1,
+              'hyt9c-gfsfd-iuo' : 1,
+              'cvxxv-jgwf6-7fh' : 2,
+            };
+            this.add = function(id) {
+              this.products[id] = this.products[id] || 0;
+              this.products[id]++;
+            };
+            this.remove = function(id) {
+              this.products[id]--;
+              if (this.products[id] <= 0) {
+              delete this.products[id];
+              }
+            };
+          }
+        },
+        navigation = { // класс для работы с навигацией
+          pushNext: function() {}
+        },
+        http = {
+          send: function(request) {}
+        }
+      }
+    </script>
+
+    <!-- Это вставляется исходя из манифетса -->
+    <script type="text/javascript" src="code.js" />
+
+    <!-- Это вставляется исходя из манифетса -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <form class="form">
+  <div class="content">
+    <h3>Номер карты</h3>
+    <p><input type="text" pattern="\d*"></p>
+    <button>Далее</button>
+  </div>
+  <div class="output">
+    <div class="loader">
+      <img src="https://d13yacurqjgara.cloudfront.net/users/216925/screenshots/2044807/bolt.gif">
+    </div>
+    <div class="text"></div>
+  </div>
+</form>
+  </body>
+</html>

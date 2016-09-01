@@ -1,0 +1,29 @@
+version: 1
+
+capabilities:
+  - inventory
+  - http
+
+daemons:
+  - name: suggestion
+    events:
+      - evo.receipt.opened
+      - evo.receipt.productAdded
+      - evo.receipt.productRemoved
+      - evo.receipt.closed
+      - app.suggestion.used
+    behavior: suggestion-daemon.js
+
+plugins:
+  - name: card-input
+    moment: evo.receipt.items.fixed
+    point: after
+    behavior: behavior.js
+
+views:
+  - name: card-input
+    source: view.html
+    scripts:
+      - code.js
+    styles:
+      - styles.css
