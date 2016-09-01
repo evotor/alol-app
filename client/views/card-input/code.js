@@ -1,7 +1,7 @@
 function fetchDiscount(cardNumber) {
     return context.http.send({
-        method: 'GET'
-        path: 'card/' + cardNumber,
+        method: 'GET',
+        path: 'card/' + cardNumber
     }).body.discount;
 }
 
@@ -12,7 +12,6 @@ $(function () {
 
     $('.form').submit(function (e) {
         e.preventDefault();
-        deferred = ;
         loader.show();
         text.hide();
         send(input).then(function (data) {
@@ -20,7 +19,7 @@ $(function () {
             loader.hide();
             text.show();
         })
-    })
+    });
 
     function send(el) {
         var deferred = $.Deferred();
@@ -35,4 +34,4 @@ $(function () {
 
         return deferred.promise();
     }
-})
+});
