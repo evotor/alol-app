@@ -3,7 +3,7 @@ version: 1
 capabilities:
   - http
   - user.settings
-  #- device.settings
+  #- secret.settings
 
 endpoints:
   http: # smart terminal requests
@@ -13,6 +13,15 @@ endpoints:
           type: basic
           login: user.settings.api.login
           password: user.settings.api.password
+          
+  market: #site market.evotor.ru requests
+    default:
+        url: http://api.alol.io/admin # base url, all paths will be added to it
+        auth:
+          type: basic # or token
+          login: "SECRET_LOGIN" # secret.settings.login
+          password: "SECRET_PASSWORD" # secret.settings.password
+    
 
 user.settings:  #configurable at market.evotor.ru
     api.login:
