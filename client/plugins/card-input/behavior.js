@@ -1,6 +1,6 @@
 
 function handleMoment(context, navigation) {
-  navigation.pushView("suggestions", {
+  navigation.pushView("card-input", {
     receipt: context.receipt;
   })
 }
